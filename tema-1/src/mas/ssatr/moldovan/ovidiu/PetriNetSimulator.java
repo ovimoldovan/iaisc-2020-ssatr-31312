@@ -10,7 +10,7 @@ public class PetriNetSimulator {
 
     public void Simulate(){
         for(var transition : petriNetModel.Transitions){
-            transition.ExecuteTransitions();
+            transition.ExecuteTransition();
         }
     }
 }

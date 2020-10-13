@@ -1,0 +1,34 @@
+{
+  "places": [
+    {
+      "tokens": 1,
+      "name": "P1"
+    },
+    {
+      "tokens": 0,
+      "name": "P2"
+    },
+    {
+      "tokens": 0,
+      "name": "P3"
+    }
+  ],
+  "transitions": [{
+    "previousPlaces": [{
+      "name" : "P1"
+    }],
+    "nextPlaces": [{
+      "name": "P2"
+    }],
+    "name": "T1"
+  },
+    {
+      "previousPlaces": [{
+        "name" : "P2"
+      }],
+      "nextPlaces": [{
+        "name": "P3"
+      }],
+      "name": "T2"
+  }]
+}

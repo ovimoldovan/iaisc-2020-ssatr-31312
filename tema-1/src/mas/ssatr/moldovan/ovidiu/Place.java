@@ -28,8 +28,21 @@ public class Place {
         this.Tokens = Tokens - number;
         System.out.println("Removed " + number + " tokens from place " + this.Name);
     }
+
     public void RemoveToken(){
         this.Tokens = Tokens - 1;
         System.out.println("Removed a token from place " + this.Name);
+    }
+
+    public void DisplayPlace(){
+        System.out.println("Place " + this.Name + " with " + this.Tokens + " tokens.");
+    }
+
+    public String getName(){
+        return this.Name;
+    }
+
+    public int getTokens(){
+        return this.Tokens;
     }
 }

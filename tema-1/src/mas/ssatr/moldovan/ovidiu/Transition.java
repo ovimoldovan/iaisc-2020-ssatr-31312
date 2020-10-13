@@ -4,9 +4,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Transition {
-    public List<Place> PreviousPlaces;
-    public List<Place> NextPlaces;
-    public String Name;
+    private List<Place> PreviousPlaces;
+    private List<Place> NextPlaces;
+
+    public List<Place> getPreviousPlaces() {
+        return PreviousPlaces;
+    }
+
+    public List<Place> getNextPlaces() {
+        return NextPlaces;
+    }
+
+    public String getName() {
+        return Name;
+    }
+
+    private String Name;
 
     public Transition(List<Place> PreviousPlaces, List<Place> NextPlaces, String name){
         this.PreviousPlaces = PreviousPlaces;
@@ -28,7 +41,7 @@ public class Transition {
         PreviousPlaces.add(p);
     }
 
-    public void ExecuteTransitions(){
+    public void ExecuteTransition(){
         for(Place input : PreviousPlaces){
             if(input.HasToken()){
                 input.RemoveToken();
@@ -38,5 +51,17 @@ public class Transition {
             }
         }
         System.out.println(this.Name + " transition executed.");
+    }
+
+    public void DisplayTransition(){
+        System.out.print("Transition " + this.Name + " with input places: ");
+        for(Place input : PreviousPlaces){
+            System.out.print(input.getName()+ " ");
+            }
+        System.out.print(" and output places: ");
+        for(Place output : NextPlaces){
+            System.out.print(output.getName() + " ");
+        }
+        System.out.print("\n");
     }
 }
