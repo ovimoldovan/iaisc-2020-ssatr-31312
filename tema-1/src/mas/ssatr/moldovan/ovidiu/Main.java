@@ -12,5 +12,7 @@ public class Main {
     public static void main(String[] args) {
         var Loader = new PetriNetLoader();
         Loader.read();
+        var PetriNetSimulator = new PetriNetSimulator(Loader.petriNetModel);
+        PetriNetSimulator.Simulate();
     }
 }

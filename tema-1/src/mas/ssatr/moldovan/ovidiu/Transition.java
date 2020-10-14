@@ -6,6 +6,8 @@ import java.util.List;
 public class Transition {
     private List<Place> PreviousPlaces;
     private List<Place> NextPlaces;
+    private int Time = 1;
+    private String Name;
 
     public List<Place> getPreviousPlaces() {
         return PreviousPlaces;
@@ -18,8 +20,6 @@ public class Transition {
     public String getName() {
         return Name;
     }
-
-    private String Name;
 
     public Transition(List<Place> PreviousPlaces, List<Place> NextPlaces, String name){
         this.PreviousPlaces = PreviousPlaces;
@@ -39,6 +39,10 @@ public class Transition {
 
     public void AddPreviousPlace(Place p){
         PreviousPlaces.add(p);
+    }
+
+    public void setTime(int time){
+        Time = time;
     }
 
     public void ExecuteTransition(){
@@ -62,6 +66,10 @@ public class Transition {
         for(Place output : NextPlaces){
             System.out.print(output.getName() + " ");
         }
-        System.out.print("\n");
+        System.out.print("\nIt takes " + Time + " time units.\n");
+    }
+
+    public int getTime() {
+        return Time;
     }
 }

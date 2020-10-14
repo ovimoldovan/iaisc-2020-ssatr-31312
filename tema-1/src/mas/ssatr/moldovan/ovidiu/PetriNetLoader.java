@@ -9,7 +9,7 @@ import java.util.List;
 
 public class PetriNetLoader {
 
-    PetriNetModel petriNetModel = new PetriNetModel();
+    public PetriNetModel petriNetModel = new PetriNetModel();
 
     public void read(){
         JSONParser parser = new JSONParser();
@@ -40,8 +40,10 @@ public class PetriNetLoader {
         JSONArray previousPlaces = (JSONArray) transitions.get("previousPlaces");
         JSONArray nextPlaces = (JSONArray) transitions.get("nextPlaces");
         String name = transitions.get("name").toString();
+        String time = transitions.get("time").toString();
 
         Transition transition = new Transition(name);
+        transition.setTime(Integer.parseInt(time));
 
         Iterator<JSONObject> iterator = previousPlaces.iterator();
             while (iterator.hasNext()) {

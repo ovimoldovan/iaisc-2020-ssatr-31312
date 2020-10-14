@@ -20,7 +20,8 @@
     "nextPlaces": [{
       "name": "P2"
     }],
-    "name": "T1"
+    "name": "T1",
+    "time": 1
   },
     {
       "previousPlaces": [{
@@ -29,6 +30,7 @@
       "nextPlaces": [{
         "name": "P3"
       }],
-      "name": "T2"
+      "name": "T2",
+      "time": 2
   }]
 }
