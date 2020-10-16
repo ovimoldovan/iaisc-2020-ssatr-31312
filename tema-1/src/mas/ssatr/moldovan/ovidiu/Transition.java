@@ -46,15 +46,28 @@ public class Transition {
     }
 
     public void ExecuteTransition(){
-        for(Place input : PreviousPlaces){
-            if(input.HasToken()){
-                input.RemoveToken();
-                for(Place output : NextPlaces){
-                    output.AddToken();
+        if(IsExecutable()){
+            int auxTime = 0;
+
+            for(Place input : PreviousPlaces){
+                if(input.HasToken()){
+                    input.RemoveToken();
                 }
             }
+            for(int i=0; i < Time; i++){
+                auxTime++;
+                PetriNetSimulator.ApplicationTime++;
+                if(auxTime == this.Time){
+                    for(Place output : NextPlaces){
+                        output.AddToken();
+                    }
+                }
+            }
+            System.out.println(this.Name + " transition executed.");
         }
-        System.out.println(this.Name + " transition executed.");
+        else{
+            return;
+        }
     }
 
     public void DisplayTransition(){
@@ -71,5 +84,14 @@ public class Transition {
 
     public int getTime() {
         return Time;
+    }
+
+    public boolean IsExecutable(){
+        for(Place input : PreviousPlaces){
+            if(!input.HasToken()){
+                return false;
+            }
+        }
+        return true;
     }
 }

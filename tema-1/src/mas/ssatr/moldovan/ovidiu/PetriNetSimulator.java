@@ -2,7 +2,7 @@ package mas.ssatr.moldovan.ovidiu;
 
 public class PetriNetSimulator {
     private PetriNetModel petriNetModel;
-    private int currentTime = 0;
+    public static int ApplicationTime = 0;
     private int copyTime;
 
     public PetriNetSimulator(PetriNetModel petriNetModel) {
@@ -12,8 +12,8 @@ public class PetriNetSimulator {
     public void Simulate(){
         System.out.println("\n-----Simulation started-----\n");
         for(var transition : petriNetModel.Transitions){
-            this.currentTime++;
-            System.out.println("Application time: " + this.currentTime);
+            this.ApplicationTime++;
+            System.out.println("Application time: " + this.ApplicationTime);
             transition.ExecuteTransition();
         }
     }
