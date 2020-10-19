@@ -1,0 +1,28 @@
+Place P1 with 1 tokens.
+Place P2 with 0 tokens.
+Place P3 with 0 tokens.
+Transition T1 with input places: 
+P1 
+ and output places: 
+P2 
+
+It takes 1 time units.
+
+Transition T2 with input places: 
+P2 
+ and output places: 
+P3 
+
+It takes 2 time units.
+
+
+-----Simulation started-----
+
+Application time: 1
+Removed a token from place P1
+Added a token to place P2
+T1 transition executed.
+Application time: 3
+Removed a token from place P2
+Added a token to place P3
+T2 transition executed.

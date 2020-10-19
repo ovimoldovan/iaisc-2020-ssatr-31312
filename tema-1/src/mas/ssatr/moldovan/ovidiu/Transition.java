@@ -64,6 +64,7 @@ public class Transition {
                 }
             }
             System.out.println(this.Name + " transition executed.");
+            FileHelper.Write(this.Name + " transition executed.");
         }
         else{
             return;
@@ -72,14 +73,19 @@ public class Transition {
 
     public void DisplayTransition(){
         System.out.print("Transition " + this.Name + " with input places: ");
+        FileHelper.Write("Transition " + this.Name + " with input places: ");
         for(Place input : PreviousPlaces){
             System.out.print(input.getName()+ " ");
+            FileHelper.Write(input.getName()+ " ");
             }
         System.out.print(" and output places: ");
+        FileHelper.Write(" and output places: ");
         for(Place output : NextPlaces){
             System.out.print(output.getName() + " ");
+            FileHelper.Write(output.getName() + " ");
         }
         System.out.print("\nIt takes " + Time + " time units.\n");
+        FileHelper.Write("\nIt takes " + Time + " time units.\n");
     }
 
     public int getTime() {
