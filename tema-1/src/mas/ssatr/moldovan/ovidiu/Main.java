@@ -10,6 +10,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
+        FileHelper.DeletePreviousOutputs();
         var Loader = new PetriNetLoader();
         Loader.read();
         var PetriNetSimulator = new PetriNetSimulator(Loader.petriNetModel);
