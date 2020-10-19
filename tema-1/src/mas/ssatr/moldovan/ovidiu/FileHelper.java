@@ -18,6 +18,8 @@ public class FileHelper {
 
     public static void Write(String content) {
 
+        System.out.println(content);
+
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(fileName, true))) {
             bw.write(content);
             bw.newLine();

@@ -10,11 +10,9 @@ public class PetriNetSimulator {
     }
 
     public void Simulate(){
-        System.out.println("\n-----Simulation started-----\n");
         FileHelper.Write("\n-----Simulation started-----\n");
         for(var transition : petriNetModel.Transitions){
             this.ApplicationTime++;
-            System.out.println("Application time: " + this.ApplicationTime);
             FileHelper.Write("Application time: " + this.ApplicationTime);
             transition.ExecuteTransition();
         }
