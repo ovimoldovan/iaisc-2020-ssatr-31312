@@ -41,7 +41,12 @@ public class PetriNetLoader {
         JSONArray previousPlaces = (JSONArray) transitions.get("previousPlaces");
         JSONArray nextPlaces = (JSONArray) transitions.get("nextPlaces");
         String name = transitions.get("name").toString();
-        String time = transitions.get("time").toString();
+        String time;
+        try { time = transitions.get("time").toString();
+        }
+        catch(Exception e){
+            time = "1";
+        }
         String time2;
         try{
             time2 = transitions.get("time2").toString();

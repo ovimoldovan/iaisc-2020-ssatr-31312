@@ -1,28 +1,157 @@
-Place P1 with 1 tokens.
+Place P0 with 1 tokens.
+Place P1 with 0 tokens.
 Place P2 with 0 tokens.
 Place P3 with 0 tokens.
+Place P4 with 1 tokens.
+Place P5 with 0 tokens.
+Place P6 with 1 tokens.
+Place P7 with 0 tokens.
+Place P8 with 0 tokens.
+Place P9 with 0 tokens.
+Place P10 with 0 tokens.
+Place P11 with 0 tokens.
+Place P12 with 0 tokens.
+Place P13 with 0 tokens.
+Transition T0 with input places: 
+P0 
+ and output places: 
+P1 
+P2 
+
+It takes 1 time units.
+
 Transition T1 with input places: 
 P1 
  and output places: 
-P2 
+P3 
 
-It takes 4 time units.
+It takes 1 time units.
+
+Transition T3 with input places: 
+P3 
+P4 
+ and output places: 
+P7 
+
+It takes 1 time units.
+
+Transition T5 with input places: 
+P7 
+ and output places: 
+P9 
+
+It takes 2 time units.
+
+Transition T7 with input places: 
+P9 
+ and output places: 
+P11 
+P4 
+
+It takes 3 time units.
+
+Transition T9 with input places: 
+P11 
+ and output places: 
+P13 
+
+It takes 1 time units.
 
 Transition T2 with input places: 
 P2 
  and output places: 
-P3 
+P5 
+
+It takes 4 time units.
+
+Transition T4 with input places: 
+P5 
+P6 
+ and output places: 
+P8 
+
+It takes 1 time units.
+
+Transition T6 with input places: 
+P8 
+ and output places: 
+P10 
+
+It takes 4 time units.
+
+Transition T8 with input places: 
+P10 
+ and output places: 
+P12 
+P6 
 
 It takes 2 time units.
+
+Transition T9 with input places: 
+P12 
+ and output places: 
+P13 
+
+It takes 1 time units.
+
+Transition T10 with input places: 
+P13 
+ and output places: 
+
+It takes 1 time units.
 
 
 -----Simulation started-----
 
 Application time: 1
-Removed a token from place P1
+Removed a token from place P0
+Added a token to place P1
 Added a token to place P2
-T1 transition executed.
-Application time: 6
-Removed a token from place P2
+T0 transition executed.
+Application time: 3
+Removed a token from place P1
 Added a token to place P3
+T1 transition executed.
+Application time: 5
+Removed a token from place P3
+Removed a token from place P4
+Added a token to place P7
+T3 transition executed.
+Application time: 7
+Removed a token from place P7
+Added a token to place P9
+T5 transition executed.
+Application time: 10
+Removed a token from place P9
+Added a token to place P11
+Added a token to place P4
+T7 transition executed.
+Application time: 14
+Removed a token from place P11
+Added a token to place P13
+T9 transition executed.
+Application time: 16
+Removed a token from place P2
+Added a token to place P5
 T2 transition executed.
+Application time: 21
+Removed a token from place P5
+Removed a token from place P6
+Added a token to place P8
+T4 transition executed.
+Application time: 23
+Removed a token from place P8
+Added a token to place P10
+T6 transition executed.
+Application time: 28
+Removed a token from place P10
+Added a token to place P12
+Added a token to place P6
+T8 transition executed.
+Application time: 31
+Removed a token from place P12
+Added a token to place P13
+T9 transition executed.
+Application time: 33
+Removed a token from place P13
+T10 transition executed.
