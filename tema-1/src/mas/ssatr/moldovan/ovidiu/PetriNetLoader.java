@@ -41,12 +41,14 @@ public class PetriNetLoader {
         JSONArray previousPlaces = (JSONArray) transitions.get("previousPlaces");
         JSONArray nextPlaces = (JSONArray) transitions.get("nextPlaces");
         String name = transitions.get("name").toString();
+
         String time;
         try { time = transitions.get("time").toString();
         }
         catch(Exception e){
             time = "1";
         }
+
         String time2;
         try{
             time2 = transitions.get("time2").toString();
@@ -55,14 +57,7 @@ public class PetriNetLoader {
             time2 = null;
         }
 
-        int timeInt;
-
-        if(time2 != null){
-            timeInt = computeTime(time, time2);
-        }
-        else{
-            timeInt = Integer.parseInt(time);
-        }
+        int timeInt = getTimeInt(time, time2);
 
         Transition transition = new Transition(name);
         transition.setTime(timeInt);
@@ -86,6 +81,15 @@ public class PetriNetLoader {
             }
         }
         this.petriNetModel.Transitions.add(transition);
+    }
+
+    private int getTimeInt(String time, String time2) {
+        if(time2 != null){
+            return computeTime(time, time2);
+        }
+        else{
+            return Integer.parseInt(time);
+        }
     }
 
     private int computeTime(String time, String time2) {

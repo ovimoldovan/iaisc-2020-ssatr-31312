@@ -1,6 +1,8 @@
 package mas.ssatr.moldovan.ovidiu;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class PetriNetModel {
@@ -23,5 +25,14 @@ public class PetriNetModel {
         for(var transition : Transitions){
             transition.DisplayTransition();
         }
+    }
+
+    public void sortTransitions() {
+        Collections.sort(Transitions, (o1, o2) -> {
+            if (o1.getTime() == o2.getTime()) {
+                return 0;
+            }
+            return o1.getTime() < o2.getTime() ? -1 : 1;
+        });
     }
 }

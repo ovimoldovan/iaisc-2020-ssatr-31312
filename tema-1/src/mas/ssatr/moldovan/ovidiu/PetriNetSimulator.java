@@ -3,16 +3,15 @@ package mas.ssatr.moldovan.ovidiu;
 public class PetriNetSimulator {
     private PetriNetModel petriNetModel;
     public static int ApplicationTime = 0;
-    private int copyTime;
 
     public PetriNetSimulator(PetriNetModel petriNetModel) {
         this.petriNetModel = petriNetModel;
     }
 
     public void Simulate(){
+        //petriNetModel.sortTransitions();
         FileHelper.Write("\n-----Simulation started-----\n");
         for(var transition : petriNetModel.Transitions){
-            this.ApplicationTime++;
             FileHelper.Write("Application time: " + this.ApplicationTime);
             transition.ExecuteTransition();
             try{
@@ -22,13 +21,5 @@ public class PetriNetSimulator {
                 e.printStackTrace();
             }
         }
-    }
-
-    int executableAtTimeUnit(){
-        int timestamp = 0;
-        for(int i=0; i<petriNetModel.Transitions.size(); i++){
-            timestamp = timestamp +petriNetModel.Transitions.get(i).getTime();
-        }
-        return timestamp;
     }
 }

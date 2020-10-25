@@ -46,6 +46,7 @@ public class Transition {
     }
 
     public void ExecuteTransition(){
+        //PetriNetSimulator.ApplicationTime++;
         if(IsExecutable()){
             int auxTime = 0;
 

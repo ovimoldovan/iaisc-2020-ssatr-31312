@@ -1,7 +1,5 @@
 package mas.ssatr.moldovan.ovidiu;
 
-import java.util.List;
-
 public class Place {
     private int Tokens;
     private String Name;
