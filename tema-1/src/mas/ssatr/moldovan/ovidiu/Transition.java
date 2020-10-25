@@ -73,7 +73,6 @@ public class Transition {
     public void DisplayTransition(){
         FileHelper.Write("Transition " + this.Name + " with input places: ");
         for(Place input : PreviousPlaces){
-            System.out.print(input.getName()+ " ");
             FileHelper.Write(input.getName()+ " ");
             }
         FileHelper.Write(" and output places: ");

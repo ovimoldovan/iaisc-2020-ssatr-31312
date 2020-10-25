@@ -21,7 +21,8 @@
       "name": "P2"
     }],
     "name": "T1",
-    "time": 1
+    "time": 1,
+    "time2": 5
   },
     {
       "previousPlaces": [{

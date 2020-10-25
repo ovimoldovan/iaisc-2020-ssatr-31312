@@ -6,6 +6,7 @@ import org.json.simple.parser.JSONParser;
 import java.io.FileReader;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Random;
 
 public class PetriNetLoader {
 
@@ -41,9 +42,25 @@ public class PetriNetLoader {
         JSONArray nextPlaces = (JSONArray) transitions.get("nextPlaces");
         String name = transitions.get("name").toString();
         String time = transitions.get("time").toString();
+        String time2;
+        try{
+            time2 = transitions.get("time2").toString();
+        }
+        catch(Exception e){
+            time2 = null;
+        }
+
+        int timeInt;
+
+        if(time2 != null){
+            timeInt = computeTime(time, time2);
+        }
+        else{
+            timeInt = Integer.parseInt(time);
+        }
 
         Transition transition = new Transition(name);
-        transition.setTime(Integer.parseInt(time));
+        transition.setTime(timeInt);
 
         Iterator<JSONObject> iterator = previousPlaces.iterator();
             while (iterator.hasNext()) {
@@ -64,6 +81,13 @@ public class PetriNetLoader {
             }
         }
         this.petriNetModel.Transitions.add(transition);
+    }
+
+    private int computeTime(String time, String time2) {
+        int t1 = Integer.parseInt(time);
+        int t2 = Integer.parseInt(time2);
+        Random r = new Random();
+        return r.nextInt(t2 - t1) + t1;
     }
 
     public PetriNetModel initializeHardCodedPetriNet(){

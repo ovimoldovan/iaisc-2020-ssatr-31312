@@ -6,7 +6,7 @@ P1
  and output places: 
 P2 
 
-It takes 1 time units.
+It takes 4 time units.
 
 Transition T2 with input places: 
 P2 
@@ -22,7 +22,7 @@ Application time: 1
 Removed a token from place P1
 Added a token to place P2
 T1 transition executed.
-Application time: 3
+Application time: 6
 Removed a token from place P2
 Added a token to place P3
 T2 transition executed.
