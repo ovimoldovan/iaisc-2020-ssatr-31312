@@ -37,16 +37,18 @@ It takes 1 time units.
 
 Transition T5 with input places: 
 P7 
+P6 
  and output places: 
 P9 
 
-It takes 2 time units.
+It takes 3 time units.
 
 Transition T7 with input places: 
 P9 
  and output places: 
 P11 
 P4 
+P6 
 
 It takes 3 time units.
 
@@ -74,16 +76,18 @@ It takes 1 time units.
 
 Transition T6 with input places: 
 P8 
+P4 
  and output places: 
 P10 
 
-It takes 4 time units.
+It takes 2 time units.
 
 Transition T8 with input places: 
 P10 
  and output places: 
 P12 
 P6 
+P4 
 
 It takes 2 time units.
 
@@ -119,39 +123,43 @@ Added a token to place P7
 T3 transition executed.
 Application time: 7
 Removed a token from place P7
+Removed a token from place P6
 Added a token to place P9
 T5 transition executed.
-Application time: 10
+Application time: 11
 Removed a token from place P9
 Added a token to place P11
 Added a token to place P4
+Added a token to place P6
 T7 transition executed.
-Application time: 14
+Application time: 15
 Removed a token from place P11
 Added a token to place P13
 T9 transition executed.
-Application time: 16
+Application time: 17
 Removed a token from place P2
 Added a token to place P5
 T2 transition executed.
-Application time: 21
+Application time: 22
 Removed a token from place P5
 Removed a token from place P6
 Added a token to place P8
 T4 transition executed.
-Application time: 23
+Application time: 24
 Removed a token from place P8
+Removed a token from place P4
 Added a token to place P10
 T6 transition executed.
-Application time: 28
+Application time: 27
 Removed a token from place P10
 Added a token to place P12
 Added a token to place P6
+Added a token to place P4
 T8 transition executed.
-Application time: 31
+Application time: 30
 Removed a token from place P12
 Added a token to place P13
 T9 transition executed.
-Application time: 33
+Application time: 32
 Removed a token from place P13
 T10 transition executed.

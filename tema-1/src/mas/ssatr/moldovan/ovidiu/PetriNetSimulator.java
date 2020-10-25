@@ -15,6 +15,12 @@ public class PetriNetSimulator {
             this.ApplicationTime++;
             FileHelper.Write("Application time: " + this.ApplicationTime);
             transition.ExecuteTransition();
+            try{
+                Thread.sleep(1000);
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }
         }
     }
 

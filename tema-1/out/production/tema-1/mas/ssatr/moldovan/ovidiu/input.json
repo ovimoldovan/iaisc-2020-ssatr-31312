@@ -109,6 +109,9 @@
       "previousPlaces": [
         {
           "name": "P7"
+        },
+        {
+          "name": "P6"
         }
       ],
       "nextPlaces": [
@@ -132,6 +135,9 @@
         },
         {
           "name": "P4"
+        },
+        {
+          "name": "P6"
         }
       ],
       "name": "T7",
@@ -185,6 +191,9 @@
       "previousPlaces": [
         {
           "name": "P8"
+        },
+        {
+          "name": "P4"
         }
       ],
       "nextPlaces": [
@@ -208,6 +217,9 @@
         },
         {
           "name": "P6"
+        },
+        {
+          "name": "P4"
         }
       ],
       "name": "T8",
