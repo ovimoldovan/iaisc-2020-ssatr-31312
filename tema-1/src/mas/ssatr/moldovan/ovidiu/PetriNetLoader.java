@@ -46,7 +46,7 @@ public class PetriNetLoader {
         try { time = transitions.get("time").toString();
         }
         catch(Exception e){
-            time = "1";
+            time = "0";
         }
 
         String time2;

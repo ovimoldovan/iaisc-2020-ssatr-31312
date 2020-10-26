@@ -55,15 +55,23 @@ public class Transition {
                     input.RemoveToken();
                 }
             }
-            for(int i=0; i < Time; i++){
-                auxTime++;
-                PetriNetSimulator.ApplicationTime++;
-                if(auxTime == this.Time){
-                    for(Place output : NextPlaces){
-                        output.AddToken();
+            if(Time>0){
+                for(int i=0; i < Time; i++){
+                    auxTime++;
+                    PetriNetSimulator.ApplicationTime++;
+                    if(auxTime == this.Time){
+                        for(Place output : NextPlaces){
+                            output.AddToken();
+                        }
                     }
                 }
             }
+            else{
+                for(Place output : NextPlaces){
+                    output.AddToken();
+                }
+            }
+
             FileHelper.Write(this.Name + " transition executed.");
         }
         else{
