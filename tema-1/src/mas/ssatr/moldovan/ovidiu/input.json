@@ -102,8 +102,7 @@
           "name": "P7"
         }
       ],
-      "name": "T3",
-      "time": 1
+      "name": "T3"
     },
     {
       "previousPlaces": [
@@ -148,6 +147,9 @@
       "previousPlaces": [
         {
           "name": "P11"
+        },
+        {
+          "name": "P12"
         }
       ],
       "nextPlaces": [

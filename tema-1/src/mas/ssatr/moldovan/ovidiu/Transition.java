@@ -8,6 +8,8 @@ public class Transition {
     private List<Place> NextPlaces;
     private int Time = 1;
     private String Name;
+    private boolean isExecuting;
+    int auxTime;
 
     public List<Place> getPreviousPlaces() {
         return PreviousPlaces;
@@ -21,71 +23,58 @@ public class Transition {
         return Name;
     }
 
-    public Transition(List<Place> PreviousPlaces, List<Place> NextPlaces, String name){
+    public Transition(List<Place> PreviousPlaces, List<Place> NextPlaces, String name) {
         this.PreviousPlaces = PreviousPlaces;
         this.NextPlaces = NextPlaces;
         this.Name = name;
     }
 
-    public Transition(String name){
+    public Transition(String name) {
         this.PreviousPlaces = new ArrayList<Place>();
         this.NextPlaces = new ArrayList<Place>();
         this.Name = name;
     }
 
-    public void AddNextPlace(Place p){
+    public void AddNextPlace(Place p) {
         NextPlaces.add(p);
     }
 
-    public void AddPreviousPlace(Place p){
+    public void AddPreviousPlace(Place p) {
         PreviousPlaces.add(p);
     }
 
-    public void setTime(int time){
+    public void setTime(int time) {
         Time = time;
     }
 
-    public void ExecuteTransition(){
-        //PetriNetSimulator.ApplicationTime++;
-        if(IsExecutable()){
-            int auxTime = 0;
-
-            for(Place input : PreviousPlaces){
-                if(input.HasToken()){
+    public void ExecuteTransition() {
+        if (IsExecutable()) {
+            for (Place input : PreviousPlaces) {
+                if (input.HasToken()) {
                     input.RemoveToken();
                 }
             }
-            if(Time>0){
-                for(int i=0; i < Time; i++){
-                    auxTime++;
-                    PetriNetSimulator.ApplicationTime++;
-                    if(auxTime == this.Time){
-                        for(Place output : NextPlaces){
-                            output.AddToken();
-                        }
-                    }
-                }
-            }
-            else{
-                for(Place output : NextPlaces){
-                    output.AddToken();
-                }
-            }
-
-            FileHelper.Write(this.Name + " transition executed.");
+            isExecuting = true;
         }
-        else{
-            return;
+        auxTime++;
+
+        if (isExecuting && enoughTimeHasPassed(auxTime)) {
+            FileHelper.Write(this.Name + " transition executed.");
+            for (Place output : NextPlaces) {
+                output.AddToken();
+            }
+            isExecuting = false;
+            auxTime = 0;
         }
     }
 
-    public void DisplayTransition(){
+    public void DisplayTransition() {
         FileHelper.Write("Transition " + this.Name + " with input places: ");
-        for(Place input : PreviousPlaces){
-            FileHelper.Write(input.getName()+ " ");
-            }
+        for (Place input : PreviousPlaces) {
+            FileHelper.Write(input.getName() + " ");
+        }
         FileHelper.Write(" and output places: ");
-        for(Place output : NextPlaces){
+        for (Place output : NextPlaces) {
             FileHelper.Write(output.getName() + " ");
         }
         FileHelper.Write("\nIt takes " + Time + " time units.\n");
@@ -95,12 +84,20 @@ public class Transition {
         return Time;
     }
 
-    public boolean IsExecutable(){
-        for(Place input : PreviousPlaces){
-            if(!input.HasToken()){
+    public boolean IsExecutable() {
+        for (Place input : PreviousPlaces) {
+            if (!input.HasToken()) {
                 return false;
             }
         }
         return true;
+    }
+
+    public boolean getIsExecuting() {
+        return this.isExecuting;
+    }
+
+    public boolean enoughTimeHasPassed(int auxTime) {
+        return auxTime > Time;
     }
 }

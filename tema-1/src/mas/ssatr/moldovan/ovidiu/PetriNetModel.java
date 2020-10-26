@@ -34,4 +34,19 @@ public class PetriNetModel {
             return o1.getTime() < o2.getTime() ? -1 : 1;
         });
     }
+
+    public void step(){
+        List<Transition> executableTransitions = new ArrayList<Transition>();
+        for(var transition : Transitions){
+            if(transition.IsExecutable() || transition.getIsExecuting()){
+                executableTransitions.add(transition);
+            }
+        }
+
+        for(var transition : executableTransitions){
+            transition.ExecuteTransition();
+        }
+
+        PetriNetSimulator.ApplicationTime++;
+    }
 }
