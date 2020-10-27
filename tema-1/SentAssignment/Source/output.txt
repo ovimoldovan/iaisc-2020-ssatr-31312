@@ -113,94 +113,67 @@ Removed a token from place P0
 T0 transition executed.
 Added a token to place P1
 Added a token to place P2
-Markings: 0 1 1 0 1 0 1 0 0 0 0 0 0 0 
 Application time: 1
 Removed a token from place P1
 Removed a token from place P2
-Markings: 0 0 0 0 1 0 1 0 0 0 0 0 0 0 
 Application time: 2
 T1 transition executed.
 Added a token to place P3
-Markings: 0 0 0 1 1 0 1 0 0 0 0 0 0 0 
 Application time: 3
 Removed a token from place P3
 Removed a token from place P4
 T3 transition executed.
 Added a token to place P7
-Markings: 0 0 0 0 0 0 1 1 0 0 0 0 0 0 
 Application time: 4
 Removed a token from place P7
 Removed a token from place P6
-Markings: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
 Application time: 5
 T2 transition executed.
 Added a token to place P5
-Markings: 0 0 0 0 0 1 0 0 0 0 0 0 0 0 
 Application time: 6
-Markings: 0 0 0 0 0 1 0 0 0 0 0 0 0 0 
 Application time: 7
 T5 transition executed.
 Added a token to place P9
-Markings: 0 0 0 0 0 1 0 0 0 1 0 0 0 0 
 Application time: 8
 Removed a token from place P9
-Markings: 0 0 0 0 0 1 0 0 0 0 0 0 0 0 
 Application time: 9
-Markings: 0 0 0 0 0 1 0 0 0 0 0 0 0 0 
 Application time: 10
-Markings: 0 0 0 0 0 1 0 0 0 0 0 0 0 0 
 Application time: 11
 T7 transition executed.
 Added a token to place P11
 Added a token to place P4
 Added a token to place P6
-Markings: 0 0 0 0 1 1 1 0 0 0 0 1 0 0 
 Application time: 12
 Removed a token from place P5
 Removed a token from place P6
 T4 transition executed.
 Added a token to place P8
-Markings: 0 0 0 0 1 0 0 0 1 0 0 1 0 0 
 Application time: 13
 Removed a token from place P8
 Removed a token from place P4
-Markings: 0 0 0 0 0 0 0 0 0 0 0 1 0 0 
 Application time: 14
-Markings: 0 0 0 0 0 0 0 0 0 0 0 1 0 0 
 Application time: 15
-Markings: 0 0 0 0 0 0 0 0 0 0 0 1 0 0 
 Application time: 16
-Markings: 0 0 0 0 0 0 0 0 0 0 0 1 0 0 
 Application time: 17
 T6 transition executed.
 Added a token to place P10
-Markings: 0 0 0 0 0 0 0 0 0 0 1 1 0 0 
 Application time: 18
 Removed a token from place P10
-Markings: 0 0 0 0 0 0 0 0 0 0 0 1 0 0 
 Application time: 19
-Markings: 0 0 0 0 0 0 0 0 0 0 0 1 0 0 
 Application time: 20
 T8 transition executed.
 Added a token to place P12
 Added a token to place P6
 Added a token to place P4
-Markings: 0 0 0 0 1 0 1 0 0 0 0 1 1 0 
 Application time: 21
 Removed a token from place P11
 Removed a token from place P12
 T9 transition executed.
 Added a token to place P13
-Markings: 0 0 0 0 1 0 1 0 0 0 0 0 0 1 
 Application time: 22
 Removed a token from place P13
 T10 transition executed.
-Markings: 0 0 0 0 1 0 1 0 0 0 0 0 0 0 
 Application time: 23
-Markings: 0 0 0 0 1 0 1 0 0 0 0 0 0 0 
 Application time: 24
-Markings: 0 0 0 0 1 0 1 0 0 0 0 0 0 0 
 Application time: 25
-Markings: 0 0 0 0 1 0 1 0 0 0 0 0 0 0 
 Application time: 26
-Markings: 0 0 0 0 1 0 1 0 0 0 0 0 0 0 

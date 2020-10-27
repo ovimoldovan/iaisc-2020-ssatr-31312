@@ -49,6 +49,15 @@ public class PetriNetModel {
         }
 
         PetriNetSimulator.ApplicationTime++;
+        WriteMarkings();
+    }
+
+    private void WriteMarkings() {
+        FileHelper.WriteOneLine("Markings: ");
+        for(var place : Places){
+            FileHelper.WriteOneLine(place.getTokens() + " " );
+        }
+        FileHelper.WriteOneLine("\n");
     }
 
     public int getMaxTime(){
