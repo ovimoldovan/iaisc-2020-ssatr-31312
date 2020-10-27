@@ -93,6 +93,13 @@ public class Transition {
         return true;
     }
 
+    public boolean CanGoFurther(){
+        if(NextPlaces.isEmpty()) {
+            return false;
+        }
+        return true;
+    }
+
     public boolean getIsExecuting() {
         return this.isExecuting;
     }

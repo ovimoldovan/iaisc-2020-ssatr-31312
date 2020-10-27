@@ -45,8 +45,19 @@ public class PetriNetModel {
 
         for(var transition : executableTransitions){
             transition.ExecuteTransition();
+            PetriNetSimulator.LastExecutedTransitionTime = PetriNetSimulator.ApplicationTime;
         }
 
         PetriNetSimulator.ApplicationTime++;
+    }
+
+    public int getMaxTime(){
+        int max = 0;
+        for(var transition : Transitions){
+            if(max < transition.getTime()){
+                max = transition.getTime();
+            }
+        }
+        return max;
     }
 }
