@@ -12,16 +12,17 @@ public class PetriNetModel {
         Places = places;
         Transitions = transitions;
     }
+
     public PetriNetModel() {
         this.Places = new ArrayList<Place>();
         this.Transitions = new ArrayList<Transition>();
     }
 
-    public void display(){
-        for(var place : Places){
+    public void display() {
+        for (var place : Places) {
             place.DisplayPlace();
         }
-        for(var transition : Transitions){
+        for (var transition : Transitions) {
             transition.DisplayTransition();
         }
     }
@@ -35,15 +36,15 @@ public class PetriNetModel {
         });
     }
 
-    public void step(){
+    public void step() {
         List<Transition> executableTransitions = new ArrayList<Transition>();
-        for(var transition : Transitions){
-            if(transition.IsExecutable() || transition.getIsExecuting()){
+        for (var transition : Transitions) {
+            if (transition.IsExecutable() || transition.getIsExecuting()) {
                 executableTransitions.add(transition);
             }
         }
 
-        for(var transition : executableTransitions){
+        for (var transition : executableTransitions) {
             transition.ExecuteTransition();
             PetriNetSimulator.LastExecutedTransitionTime = PetriNetSimulator.ApplicationTime;
         }
@@ -54,16 +55,16 @@ public class PetriNetModel {
 
     private void WriteMarkings() {
         FileHelper.WriteOneLine("Markings: ");
-        for(var place : Places){
-            FileHelper.WriteOneLine(place.getTokens() + " " );
+        for (var place : Places) {
+            FileHelper.WriteOneLine(place.getTokens() + " ");
         }
         FileHelper.WriteOneLine("\n");
     }
 
-    public int getMaxTime(){
+    public int getMaxTime() {
         int max = 0;
-        for(var transition : Transitions){
-            if(max < transition.getTime()){
+        for (var transition : Transitions) {
+            if (max < transition.getTime()) {
                 max = transition.getTime();
             }
         }

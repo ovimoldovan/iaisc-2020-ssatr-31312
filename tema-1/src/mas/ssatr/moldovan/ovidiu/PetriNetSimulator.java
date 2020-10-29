@@ -10,12 +10,12 @@ public class PetriNetSimulator {
         this.petriNetModel = petriNetModel;
     }
 
-    public void Simulate(){
+    public void Simulate() {
         FileHelper.Write("\n-----Simulation started-----\n");
-        while(isActive){
+        while (isActive) {
             FileHelper.Write("Application time: " + this.ApplicationTime);
             petriNetModel.step();
-            if(ApplicationTime > LastExecutedTransitionTime + petriNetModel.getMaxTime()){
+            if (ApplicationTime > LastExecutedTransitionTime + petriNetModel.getMaxTime()) {
                 isActive = false;
             }
         }

@@ -9,7 +9,7 @@ public class FileHelper {
 
     private static String fileName = "output.txt";
 
-    public static void DeletePreviousOutputs(){
+    public static void DeletePreviousOutputs() {
         File myObj = new File(fileName);
         if (myObj.delete()) {
             System.out.println("New file printed");
