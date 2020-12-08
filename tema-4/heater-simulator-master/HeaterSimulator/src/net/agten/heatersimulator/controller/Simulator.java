@@ -7,10 +7,7 @@ import net.agten.heatersimulator.controller.dto.SimulationParameters;
 import net.agten.heatersimulator.domain.Environment;
 import net.agten.heatersimulator.domain.Heater;
 import net.agten.heatersimulator.domain.Thermistor;
-import net.agten.heatersimulator.domain.algorithm.CAAPID16;
-import net.agten.heatersimulator.domain.algorithm.CAAPID32;
-import net.agten.heatersimulator.domain.algorithm.ControllerAlgorithm;
-import net.agten.heatersimulator.domain.algorithm.PID32;
+import net.agten.heatersimulator.domain.algorithm.*;
 
 import org.jfree.data.xy.XYDataset;
 import org.jfree.data.xy.XYSeries;
@@ -94,6 +91,11 @@ public class Simulator {
 		dataset.addSeries(t);
 		dataset.addSeries(p);
 		return dataset;
+	}
+
+	public XYDataset runSimulation(SimulationParameters params){
+		ControllerAlgorithm pid = new FuzzyController();
+		return runSimulation(params, pid);
 	}
 	
 	private double celsiusToKelvin(double t) {

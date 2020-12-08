@@ -45,7 +45,7 @@ public class GraphWindow {
 	private final static Format DECIMAL_FORMAT = new DecimalFormat("#.00");
 	private final static int MAX_TEMP = 300;
 	
-	private final String[] ALGORITHMS = {"PID32", "CAAPID32", "CAAPID16"};
+	private final String[] ALGORITHMS = {"PID32", "CAAPID32", "CAAPID16", "FUZZY"};
 	
 	private final JFrame frame;
 	private final AboutDialog aboutDialog;
@@ -442,7 +442,10 @@ public class GraphWindow {
 			return simulator.runSimulation(params, caapidParams);
 		} else if ("CAAPID16".equals(algo)){
 			return simulator.runSimulation(params, caapid16Params);
-		} else {
+		} else if ("FUZZY".equals(algo)){
+			return simulator.runSimulation(params);
+		}
+		else{
 			return null;
 		}
 	}
